@@ -45,16 +45,16 @@ describe Minesweeper do
         ["x _ x"] => ["x 2 x"],
         ["x x _"] => ["x x 1"],
         ["_ _ x _"] => ["_ 1 x 1"],
-        }.map do |k,v|
-          subject.board(k).should == v
-        end
-      end
-    end
-    context "Contains 2 row with" do
-      context "no mines" do
-        it "returns all blank cells" do
-          subject.board(["_ _ _", "_ _ _"]).should == ["_ _ _", "_ _ _"]
-        end
+      }.map do |k,v|
+        subject.board(k).should == v
       end
     end
   end
+  context "Contains 2 row with" do
+    context "no mines" do
+      it "returns all blank cells" do
+        subject.board(["_ _ _", "_ _ _"]).should == ["_ _ _", "_ _ _"]
+      end
+    end
+  end
+end
